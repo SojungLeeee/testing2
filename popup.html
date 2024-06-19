@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>수입/지출 내역 입력창</title>
+    <link rel="stylesheet" href="css_pop.css">
+</head>
+<body>
+    <h2></h2>
+    <p id="notice">
+        수입이나 지출 중 한가지 경우만 있을 경우 해당하지 않는 것은 선택하기로 두세요. (다른 경로 시 값 무조건 입력)<br>
+        일별 기록을 초기화시키려면 '초기화' 버튼을 클릭하세요.<br>
+        일별 수입/지출 경로가 보고싶다면 '일별 기록 보기' 버튼을 클릭하세요.
+    </p>
+    <div class="input-container">
+        
+        <label for="income" class="input-label">수입 입력 : </label>
+        <select name="selIncome" id="inc">
+            <option value="선택하기">선택하기</option>
+            <option value="용돈">용돈</option>
+            <option value="월급">월급</option>
+            <option value="이월">이월</option>
+            <option value="기타">기타</option>
+        </select>
+        <input type="number" id="income" class="input-field" placeholder="얼마나 버셨나요?">
+    </div>
+
+    <div class="input-container">
+        <label for="expense" class="input-label">지출 입력 : </label>
+        <select name="selExpense" id="exp">
+            <option value="선택하기">선택하기</option>
+            <option value="식비">식비</option>
+            <option value="경조사">경조사</option>
+            <option value="교통비">교통비</option>
+            <option value="병원비">병원비</option>
+            <option value="회비">회비</option>
+            <option value="문화생활">문화생활</option>
+        </select>
+        <input type="number" id="expense" class="input-field" placeholder="얼마나 쓰셨나요?">
+
+    </div>
+
+    <div class="input-container2">
+        <button type="button" class="submitbtn" onclick="submitData()">입력 완료!</button>
+        <button type="button" class="submitbtn" id="resetButton" onclick="resetData()">초기화</button>
+        <button type="button" class="submitbtn" id="btn2" onclick="newWindow()">일별 기록 보기</button>
+        
+    </div>
+
+    <!-- 입력 완료 후 결과를 표시할 영역 -->
+    <div id="result">
+        <div id="savedata"></div>
+    </div>
+
+    <script src="popup.js"></script>
+
+</body>
+</html>
