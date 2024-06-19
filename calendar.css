@@ -1,0 +1,235 @@
+
+/* 폰트 가져오기 */
+@import url('https://fonts.googleapis.com/css?family=Poppins:wght@400;500;600&display=swap');
+@font-face { /* font_dahaeng 폰트 적용 */
+    font-family: "SDGothic";
+    src: url("font/font_dahaeng.ttf") format("truetype");
+    font-weight: normal;
+  } /* 이후 "SDGothic"으로 폰트 적용 가능 */
+
+  @font-face { /* font_dahaeng 폰트 적용 */
+    font-family: "SD";
+    src: url("font/font_mini.ttf") format("truetype");
+    font-weight: normal;
+  } /* 이후 "SDGothic"으로 폰트 적용 가능 */
+
+
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+
+.current {
+    font-family:"SD";
+}
+
+.btn {
+    width:40px;
+    height:40px;
+    font-size:25px;
+    background-color:white;
+    border-color:white;
+}
+
+body {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:100vh;
+    background:rgb(229, 246, 253);
+}
+
+.move {
+    width:800px;
+    margin-top:20px;
+    margin-bottom:20px;
+    background:white;
+    border-radius:10px;
+}
+
+.move header {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding : 20px 30px 10px; /*위, 양옆, 아래 각각 padding 20,30,10*/
+}
+
+header .current {
+    font-size:23px;
+    font-weight:600;
+}
+
+header .btn {
+    cursor:pointer; /*커서 갖다대면 포인터모양*/
+    background : #f0eded;
+    margin : 0 1px;
+    font-size:35px;
+    color:#6b6b6b;
+    text-align:center;
+    line-height:38px;
+    border-radius:50%;
+    border-color:antiquewhite;
+}
+
+
+header .btn:hover {
+    background:#cfcdcd;
+}
+
+
+header .btn:last-child {
+    margin-right:-10px;
+}
+
+.calendar {
+    padding : 20px;
+    
+}
+
+
+.calendar ul {
+    display:flex;
+    list-style:none; 
+    flex-wrap:wrap;
+    text-align:center;
+}
+
+.calendar .days {
+    margin-bottom:20px;
+}
+
+.calendar .weeks li {
+    font-weight:600;
+}
+
+
+.calendar ul li {
+    position:relative;
+    width : calc(100%/7);
+}
+
+.calendar .days li {
+    z-index:1;
+    cursor : pointer;
+    margin-top:10px;
+    margin-bottom : 20px;
+}
+
+.days li.inactive {
+    color:#aaa;
+}
+
+
+
+/*가상 요소 넣기*/
+.calendar .days li::before {
+    position:absolute;
+    content:"";
+    height:40px;
+    width:40px;
+    top:20%;
+    left:15%;
+    z-index:-1;
+    border-radius:50%;
+    transform:translate(43%, -45%); /*가로 및 세로축 각각 50%만큼 이동, 요소의 가운데로 정렬*/
+
+}
+
+.days li:hover::before {
+    background : #f2f2f2;
+}
+
+/* 해당 날짜에는 active class를 넣어주고 */
+
+.days li.active {
+    color:#fff;
+}
+
+.days li.active::before {
+    background:lightskyblue;
+}
+
+/* .nowmoney {
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    text-align:center;
+    margin-bottom:10%;
+
+} */
+
+
+.dollar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:10px;
+    margin:0;
+    
+}
+
+/* .image-container {
+    position: relative; /* 부모 요소를 상대 위치로 설정 */
+ */
+
+#main {
+    display: block;
+    margin: 0 auto; /* 이미지를 가운데 정렬 */
+    filter: blur(6px);
+}
+
+.nowmoney {
+    position: relative;
+    width: 100%; /* Make the nowmoney div take up the full width of the image */
+    top: 40px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: black; /* Adjust the text color as needed */
+}
+
+.money {
+    font-family:"SD";
+    font-size:17px;
+    margin-bottom:5%;
+}
+
+#incomeDisplay {
+    color:rgb(78, 143, 78);
+    font-weight:600;
+}
+
+#expenseDisplay {
+    color:rgb(246, 17, 17);
+    font-weight:600;
+}
+
+#currentmoney {
+    color:black;
+    font-weight:600;
+}
+
+
+.income-expense {
+    margin-top:10px;
+    font-size:13px;
+    
+}
+
+#dayincome {
+    color:green;
+    font-family:"SD";
+    font-weight:600;
+}
+
+#dayexpense {
+    color:rgb(253, 29, 66);
+    font-family:"SD";
+    font-weight:600;
+    
+}
