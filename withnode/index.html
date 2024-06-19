@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>기말_가계부</title>
+</head>
+<body>
+    <script>
+
+        function changeHTML(){
+
+            var title = document.querySelector('.title'); //title 클래스 접근
+            title.classList.add('blur'); //클래스에 blur 클래스 추가
+
+            // 희미하게 사라진 후에 다음 페이지로 이동합니다.
+            setTimeout(function() {
+                window.location.href = 'calendar.html'; // 두번째 html로 넘어가기
+                }, 500); // 효과가 완전히 사라진 후 0.5초 후에 페이지를 이동합니다.
+        }
+    </script>
+
+    <img id="mainimg" src="images/pig.jpg" alt="이미지 없음">
+    <div class="title">
+        <h1 style="font-family:SD; font-size: 100px;">소정이의 가계부</h1>
+        <h2 id="sub" style="font-family:SD; font-size:40px;">계속하시려면 아래 지폐를 클릭하세요.</h2>
+        <img id="money" src="images/money.png" onclick="changeHTML()" height=100px;></img>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,111 @@
+@font-face { /* font_dahaeng 폰트 적용 */
+    font-family: "SDGothic";
+    src: url("font/font_dahaeng.ttf") format("truetype");
+    font-weight: normal;
+  } /* 이후 "SDGothic"으로 폰트 적용 가능 */
+
+  @font-face { /* font_dahaeng 폰트 적용 */
+    font-family: "SD";
+    src: url("font/font_mini.ttf") format("truetype");
+    font-weight: normal;
+  } /* 이후 "SD"으로 폰트 적용 가능 */
+
+
+
+body {
+    background-color:rgb(214, 243, 254);
+}
+
+h2 {
+    text-align:center;
+    font-family:"SD";
+    font-size:31px;
+    font-weight:700;
+}
+
+.input-container {
+    font-family:"SD";
+    font-size:25px;
+    display:flex;
+    justify-content:center;
+    padding:10px;
+
+}
+
+.input-container2 {
+    font-family:"SD";
+    font-size:25px;
+    display:flex;
+    justify-content:center;
+    padding:10px;
+    
+}
+
+#btn2, #resetButton {
+    margin-left:1%;
+}
+
+.input-label {
+    padding:5px;
+}
+
+#income {
+    text-align:center;
+    border-radius:50px;
+    border-width:1px;
+    font-family:"SD";
+    font-size:17px;
+}
+
+#expense {
+    text-align:center;
+    border-width:1px;
+    border-radius:50px;
+    font-family:"SD";
+    font-size:17px;
+}
+
+.submitbtn {
+    width:150px;
+    font-family:"SD";
+    font-size:17px;
+    text-align:center;
+    padding:10px;
+    background-color:rgb(192, 219, 216);
+    border-color:rgb(192, 219, 216);
+    border-radius:50px;
+    cursor:pointer;
+}
+
+#result {
+    font-family:"SD";
+    text-align:center;
+}
+
+#exp {
+    width:130px;
+    font-family:"SD";
+    font-size:17px;
+    text-align:center;
+    border-width:1px;   
+    border-radius:50px;
+    margin-right:10px;
+}
+
+
+#inc {
+    width:130px;
+    font-family:"SD";
+    font-size:17px;
+    text-align:center;
+    border-width:1px;   
+    border-radius:50px;
+    margin-right:10px;
+}
+
+#notice {
+    font-family:"SD";
+    text-align:center;
+    font-weight:700;
+    color:rgb(234, 50, 50);
+}

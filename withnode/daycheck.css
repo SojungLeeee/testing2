@@ -1,0 +1,54 @@
+@font-face { /* font_dahaeng 폰트 적용 */
+    font-family: "SDGothic";
+    src: url("font/font_dahaeng.ttf") format("truetype");
+    font-weight: normal;
+  } /* 이후 "SDGothic"으로 폰트 적용 가능 */
+
+  @font-face { /* font_dahaeng 폰트 적용 */
+    font-family: "SD";
+    src: url("font/font_mini.ttf") format("truetype");
+    font-weight: normal;
+  } /* 이후 "SD"으로 폰트 적용 가능 */
+
+
+body {
+    background-color:rgb(214, 243, 254);
+    font-family:"SD";
+    font-size:10px;
+    text-align:center;
+}
+
+
+.main {
+    margin-top:20px;
+    display:flex;
+    justify-content:center;
+}
+
+.main2 {
+    font-family:"SD";
+    font-size:18px;
+    margin-right:1%;
+    border-radius:20px;
+    border-color:rgb(178, 235, 239);
+    background-color:rgb(178, 235, 239);
+    width:200px;
+    height:40px;
+    cursor:pointer; /*커서 갖다대면 포인터모양*/
+}
+
+#date {
+    text-align:center;
+    width : 200px;
+    height: 37.5px;
+    font-family:"SD";
+    font-size:18px;
+    margin-right:1%;
+    border-radius:20px;
+}
+
+.notice {
+    font-size:15px;
+    color:red;
+    font-weight:700;
+}

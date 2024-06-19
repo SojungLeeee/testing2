@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>일별 데이터 확인용 팝업창</title>
+    <link rel="stylesheet" href="daycheck.css">
+</head>
+<body>
+    <p class="notice">※ 주의 : 업데이트 된 데이터가 없으면 아무것도 업데이트 되지 않습니다. ※</p>
+    <div class="main">
+        <input id="date" type="text" placeholder="YYYYMMDD 형식 입력">
+    </div>
+    <div class="main">
+        <button onclick="getData()" class="main2"> 데이터 받아오기 </button>
+        <button onclick="resetData()" class="main2"> 데이터 초기화시키기 </button>
+    </div>
+
+
+
+    <h1 id="savedata"></h1>
+    <script>
+        
+        function getData() {
+            count=1;
+            const date = document.getElementById('date').value;
+            fetch(`http://localhost:3000/withnodetop/withnode/popup.html?date=${date}`)
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data);
+                    const savedataElement = document.getElementById('savedata');
+                    savedataElement.innerHTML = '';
+
+                    data.savedata.forEach(entry => {
+                        const entryElement = document.createElement('div');
+                        entryElement.innerHTML = `${count}번째 입력: 수입(${entry.howincome}): ${entry.income}원, 지출(${entry.howexpense}): ${entry.expense}원`;
+                        savedataElement.appendChild(entryElement);
+                        count++;
+                    });
+                });
+        }
+
+    
+        function resetData() {
+            const date = document.getElementById('date').value;
+            if (confirm("정말 데이터를 초기화 하시겠습니까?")) {
+                // 서버에 데이터 초기화 요청을 보냅니다.
+                fetch('http://localhost:3000/resetData', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ date })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    alert(data.message);
+                    // 화면에서 데이터를 초기화합니다.
+                    document.getElementById('savedata').innerHTML = '';
+                });
+            }
+        }
+
+
+    </script>
+    
+</body>
+</html>
